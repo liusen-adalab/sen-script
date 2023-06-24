@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "sen-script"
+version = "0.1.1"
+description = ""
+authors = ["liusen <liu_zsen@163.com>"]
+readme = "README.md"
+packages = [{ include = "sen_script", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+click = "^8.1.3"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.3.2"
+ipykernel = "^6.23.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+sen-script = "sen_script:cli_root"
+sc = "sen_script:cli_root"
+ri = "dev:force_reinstall_self"
+ur = "dev:update_self_at_remote"
